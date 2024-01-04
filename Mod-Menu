@@ -1,7 +1,13 @@
 const clientHTML = `
   <div class="bapev4">
-    <img src="https://forums.vape.gg/data/attachments/0/435-488d9d5a93312d814a8dd300fbbef8ab.jpg" alt="Visual Icon">
-    <div class="category" id="bapev4-visual">
+    <ul class="tabs">
+      <li onclick="showCategory('visual')">Visual</li>
+      <li onclick="showCategory('combat')">Combat</li>
+      <li onclick="showCategory('blatant')">Blatant</li>
+      <li onclick="showCategory('extra')">Extra</li>
+    </ul>
+
+    <div class="category" id="visual">
       <h2>Visual</h2>
       <button type="button" id="bapev4-esp" onclick="toggleButton(this)">ESP</button>
       <button type="button" id="bapev4-xray" onclick="toggleButton(this)">X-Ray</button>
@@ -12,25 +18,27 @@ const clientHTML = `
       <button id="scope">Scope-Zoom(Hold Right Click)</button>
       <input type="text" class="input-fields" placeholder="Enter fov value..." id="fov">
     </div>
-    <div class="category" id="bapev4-combat">
+
+    <div class="category" id="combat">
       <h2>Combat</h2>
       <button type="button" id="bapev4-autoclick" onclick="toggleButton(this)">Autoclick</button>
       <button type="button" id="bapev4-highjump" onclick="toggleButton(this)">High Jump</button>
       <button type="button" id="bapev4-speed" onclick="toggleButton(this)">Speed</button>
     </div>
-    <div class="category" id="bapev4-blatant">
+
+    <div class="category" id="blatant">
       <h2>Blatant</h2>
       <button type="button" id="bapev4-killaura" onclick="toggleButton(this)">KillAura</button>
       <button type="button" id="bapev4-killall" onclick="toggleButton(this)">KillAll</button>
       <button type="button" id="bapev4-autoCollectFlag" onclick="toggleButton(this)">AutoCollectFlag</button>
     </div>
-    <div class="category" id="bapev4-extra">
+
+    <div class="category" id="extra">
       <h2>Extra</h2>
       <button type="button" id="bapev4-funnychat" onclick="toggleButton(this)">FunnyChat</button>
     </div>
   </div>
 `;
-
 
 const clientCSS = `
   <style>
@@ -39,35 +47,33 @@ const clientCSS = `
     }
 
     .bapev4 {
-      position: absolute;
-      top: 0;
-      left: 0;
       padding: 10px;
       box-sizing: border-box;
     }
 
-    .category {
-      display: inline-block;
-      width: 200px;
-      background-color: #1a1616;
-      padding: 5px;
-      margin-right: 10px;
-      margin-bottom: 10px;
-      text-align: center;
-      border: none;
-      overflow: hidden;
-      position: relative;
+    .tabs {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
     }
 
-    .category img {
-      width: 100%;
-      height: auto;
-      display: block;
-      position: absolute;
-      top: 0;
-      left: 0;
-      opacity: 0.5;
-      z-index: -1;
+    .tabs li {
+      cursor: pointer;
+      padding: 10px;
+      background-color: #1a1616;
+      color: white;
+      margin-right: 10px;
+      border: none;
+    }
+
+    .tabs li:hover {
+      background-color: #f4f4f4;
+      color: #1a1616;
+    }
+
+    .category {
+      display: none;
     }
 
     .category h2 {
@@ -102,4 +108,11 @@ const clientCSS = `
 window.toggleButton = function(button) {
   button.classList.toggle('purple');
 }
-
+        document.addEventListener('DOMContentLoaded', function () {
+window.showCategory = function(category) {
+  const categories = document.querySelectorAll('.category');
+  categories.forEach(cat => {
+    cat.style.display = 'none';
+  });
+  document.getElementById(category).style.display = 'block';
+}});
