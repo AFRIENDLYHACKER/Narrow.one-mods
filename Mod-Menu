@@ -55,8 +55,8 @@ const clientCSS = `
       box-sizing: border-box;
       max-width: 362px;
       position: absolute;
-      top: 0;
-      left: 0;
+      top: 13;
+      left: 15;
       padding: 10px;
       box-sizing: border-box;
       background-color: #383d41;
