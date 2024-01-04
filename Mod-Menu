@@ -33,7 +33,7 @@ const clientHTML = `
 
   <div class="category" id="blatant">
     <h2>Blatant</h2>
-    <button type="button" id="bapev4-killaura" onclick="toggleButton(this)">KillAura</button>
+    <button type="button" id="bapev4-killaura" onclick="toggleButton(this)">Silent-Aim(beta)</button>
     <button type="button" id="bapev4-killall" onclick="toggleButton(this)">KillAll</button>
     <button type="button" id="bapev4-autoCollectFlag" onclick="toggleButton(this)">AutoCollectFlag</button>
   </div>
