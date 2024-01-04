@@ -16,11 +16,15 @@ const clientHTML = `
     <button id="earthquake2">Earthquake(v2)</button>
     <button id="earthquake3">Earthquake(v3)</button>
     <button id="scope">Scope-Zoom(Hold Right Click)</button>
-    <input type="text" class="input-fields" placeholder="Enter fov value..." id="fov" value="1" max="10" min="1">
+    <li id="tiltL">Tilt Map Left</li>
+    <li id="tiltR">Tilt Map Right</li>
+    <li id="Ghosts">GhostTown</li>
   </div>
 
   <div class="category" id="combat">
     <h2>Combat</h2>
+    <li id="d14">Highlight Objects(keybind: M)</li>
+    <button id="speed1">Big-Hitbox</button>
     <button type="button" id="bapev4-autoclick" onclick="toggleButton(this)">Spam Fire</button>
     <button type="button" id="bapev4-highjump" onclick="toggleButton(this)">High Jump</button>
     <button type="button" id="bapev4-speed" onclick="toggleButton(this)">Speed</button>
@@ -40,7 +44,6 @@ const clientHTML = `
     <button id="speed2">Speed up game(v4)</button>
     <button id="">Directional-Boost(Beta)</button>
     <button id="">Infinite-Acceleration(Beta)</button>
-    <input type="text" class="input-fields" placeholder="Enter Aim-Offset value..." id="aimOffset">
   </div>
 </div>
 `;
