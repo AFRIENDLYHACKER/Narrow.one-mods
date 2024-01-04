@@ -16,9 +16,9 @@ const clientHTML = `
     <button id="earthquake2">Earthquake(v2)</button>
     <button id="earthquake3">Earthquake(v3)</button>
     <button id="scope">Scope-Zoom(Hold Right Click)</button>
-    <li id="tiltL">Tilt Map Left</li>
-    <li id="tiltR">Tilt Map Right</li>
-    <li id="Ghosts">GhostTown</li>
+    <button id="tiltL">Tilt Map Left</button>
+    <button id="tiltR">Tilt Map Right</button>
+    <button id="Ghosts">GhostTown</button>
   </div>
 
   <div class="category" id="combat">
