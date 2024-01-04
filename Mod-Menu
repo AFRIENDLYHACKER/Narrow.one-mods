@@ -15,7 +15,6 @@ const clientHTML = `
     <button id="earthquake1">Earthquake(v1)</button>
     <button id="earthquake2">Earthquake(v2)</button>
     <button id="earthquake3">Earthquake(v3)</button>
-    <button id="earthquake4">Earthquake(4)</button>
     <button id="scope">Scope-Zoom(Hold Right Click)</button>
     <input type="text" class="input-fields" placeholder="Enter fov value..." id="fov">
   </div>
