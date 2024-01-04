@@ -131,7 +131,7 @@ const clientCSS = `
       width: 100%;
       outline: none;
       border: 2px solid #333;
-      border-radius: 4px;
+      border-radius: 5px;
       padding: 10px;
       margin-bottom: 10px;
       box-sizing: border-box;
@@ -144,6 +144,8 @@ const clientCSS = `
     }
 .bapev4 .input-field:hover {
   border-color: #666;
+      background-color: #999;
+      transform:Scale(1.02);
 }
 .bapev4 .input-field:focus {
   outline: none;
