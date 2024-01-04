@@ -40,7 +40,7 @@ const clientHTML = `
     <button id="speed1">Speed up game(v3)</button>
     <button id="speed2">Speed up game(v4)</button>
     <button id="">Directional-Boost(Buggy)</button>
-    <label for="aimOffset">Choose Aim-Offset:</label>
+    <p style="color:white; font-weight:bold; text-align:center;">Choose Aim-Offset:</label>
     <input style="margin-right:29%;" type="number" placeholder="Enter Offset value..." id="aimOffset" min="-20" max="20" value="0">
   </div>
 </div>
