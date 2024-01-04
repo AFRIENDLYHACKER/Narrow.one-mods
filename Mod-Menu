@@ -164,6 +164,7 @@ const clientCSS = `
       font-weight:700;
     }
     .bapev4 label {
+    color:white;
     text-align:center
     margin-bottom:3px;
 font-weight: bold;
