@@ -11,6 +11,7 @@ const clientHTML = `
     <h2>Visual</h2>
     <button type="button" id="bapev4-esp" onclick="toggleButton(this)">ESP</button>
     <button type="button" id="bapev4-xray" onclick="toggleButton(this)">X-Ray</button>
+    <button id="destroymap">Destroy Map</button>
     <button id="earthquake1">Earthquake(v1)</button>
     <button id="earthquake2">Earthquake(v2)</button>
     <button id="earthquake3">Earthquake(v3)</button>
@@ -36,11 +37,10 @@ const clientHTML = `
   <div class="category" id="extra">
     <h2>Extra</h2>
     <button type="button" id="bapev4-funnychat" onclick="toggleButton(this)">FunnyChat</button>
-    <button id="destroymap">Destroy Map</button>
     <button id="speed1">Speed up game(v3)</button>
     <button id="speed2">Speed up game(v4)</button>
-    <button id="">Directional-Boost(Buggy:stupid pos check)</button>
-    <button id="">Infinite-Acceleration(Buggy:stupid speedcheck)</button>
+    <button id="">Directional-Boost(Beta)</button>
+    <button id="">Infinite-Acceleration(Beta)</button>
     <p style="color:white; font-weight:bold; text-align:center;">Aim-Offset:</p>
     <input style="margin-right:29%;" type="number" placeholder="Enter Offset value..." id="aimOffset" min="-20" max="20" value="0">
   </div>
