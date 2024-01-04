@@ -1,54 +1,67 @@
 const clientHTML = `
-  <div class="bapev4">
-    <ul class="tabs">
-      <li onclick="showCategory('visual')">Visual</li>
-      <li onclick="showCategory('combat')">Combat</li>
-      <li onclick="showCategory('blatant')">Blatant</li>
-      <li onclick="showCategory('extra')">Extra</li>
-    </ul>
+<div class="bapev4">
+  <ul class="tabs">
+    <li onclick="showCategory('visual')">Visual</li>
+    <li onclick="showCategory('combat')">Combat</li>
+    <li onclick="showCategory('blatant')">Blatant</li>
+    <li onclick="showCategory('extra')">Extra</li>
+  </ul>
 
-    <div class="category" id="visual">
-      <h2>Visual</h2>
-      <button type="button" id="bapev4-esp" onclick="toggleButton(this)">ESP</button>
-      <button type="button" id="bapev4-xray" onclick="toggleButton(this)">X-Ray</button>
-      <button id="earthquake1">Earthquake(v1)</button>
-      <button id="earthquake2">Earthquake(v2)</button>
-      <button id="earthquake3">Earthquake(v3)</button>
-      <button id="earthquake4">Earthquake(4)</button>
-      <button id="scope">Scope-Zoom(Hold Right Click)</button>
-      <input type="text" class="input-fields" placeholder="Enter fov value..." id="fov">
-    </div>
-
-    <div class="category" id="combat">
-      <h2>Combat</h2>
-      <button type="button" id="bapev4-autoclick" onclick="toggleButton(this)">Autoclick</button>
-      <button type="button" id="bapev4-highjump" onclick="toggleButton(this)">High Jump</button>
-      <button type="button" id="bapev4-speed" onclick="toggleButton(this)">Speed</button>
-    </div>
-
-    <div class="category" id="blatant">
-      <h2>Blatant</h2>
-      <button type="button" id="bapev4-killaura" onclick="toggleButton(this)">KillAura</button>
-      <button type="button" id="bapev4-killall" onclick="toggleButton(this)">KillAll</button>
-      <button type="button" id="bapev4-autoCollectFlag" onclick="toggleButton(this)">AutoCollectFlag</button>
-    </div>
-
-    <div class="category" id="extra">
-      <h2>Extra</h2>
-      <button type="button" id="bapev4-funnychat" onclick="toggleButton(this)">FunnyChat</button>
-    </div>
+  <div class="category" id="visual">
+    <h2>Visual</h2>
+    <button type="button" id="bapev4-esp" onclick="toggleButton(this)">ESP</button>
+    <button type="button" id="bapev4-xray" onclick="toggleButton(this)">X-Ray</button>
+    <button id="earthquake1">Earthquake(v1)</button>
+    <button id="earthquake2">Earthquake(v2)</button>
+    <button id="earthquake3">Earthquake(v3)</button>
+    <button id="earthquake4">Earthquake(4)</button>
+    <button id="scope">Scope-Zoom(Hold Right Click)</button>
+    <input type="text" class="input-fields" placeholder="Enter fov value..." id="fov">
   </div>
+
+  <div class="category" id="combat">
+    <h2>Combat</h2>
+    <button type="button" id="bapev4-autoclick" onclick="toggleButton(this)">Autoclick</button>
+    <button type="button" id="bapev4-highjump" onclick="toggleButton(this)">High Jump</button>
+    <button type="button" id="bapev4-speed" onclick="toggleButton(this)">Speed</button>
+  </div>
+
+  <div class="category" id="blatant">
+    <h2>Blatant</h2>
+    <button type="button" id="bapev4-killaura" onclick="toggleButton(this)">KillAura</button>
+    <button type="button" id="bapev4-killall" onclick="toggleButton(this)">KillAll</button>
+    <button type="button" id="bapev4-autoCollectFlag" onclick="toggleButton(this)">AutoCollectFlag</button>
+  </div>
+
+  <div class="category" id="extra">
+    <h2>Extra</h2>
+    <button type="button" id="bapev4-funnychat" onclick="toggleButton(this)">FunnyChat</button>
+    <button id="destroymap">Destroy Map</button>
+    <button id="speed1">Speed up game(v3)</button>
+    <button id="speed2">Speed up game(v4)</button>
+    <button id="">Directional-Boost(Buggy)</button>
+    <label for="aimOffset">Choose Aim-Offset:</label>
+    <input style="margin-right:29%;" type="number" id="aimOffset" min="-20" max="20" value="0">
+  </div>
+</div>
 `;
+
 
 const clientCSS = `
   <style>
-    body {
-      margin: 0;
-    }
-
     .bapev4 {
+      user-select:none;
       padding: 10px;
       box-sizing: border-box;
+      max-width: 600px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 10px;
+      box-sizing: border-box;
+      background-color: #383d41;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
     .tabs {
@@ -56,64 +69,117 @@ const clientCSS = `
       padding: 0;
       margin: 0;
       display: flex;
-      background-color: #1a1616;
+      background-color: #1a1d20;
+      border-radius: 8px 8px 0 0;
+      overflow: hidden;
     }
 
     .tabs li {
       cursor: pointer;
-      padding: 10px;
+      padding: 15px;
       color: white;
       margin-right: 10px;
       border: none;
       transition: background-color 0.3s;
+      border-bottom: 2px solid #1a1d20;
     }
 
     .tabs li:hover {
-      background-color: #f4f4f4;
-      color: #1a1616;
+      background-color: #2a2d30;
     }
 
     .category {
       display: none;
+      background-color: #2a2d30;
+      border-radius: 0 0 8px 8px;
+      padding: 20px;
     }
 
     .category h2 {
       margin: 0;
-      color: white;
+      color: #ffffff;
+      font-size: 24px;
+      margin-bottom: 15px;
     }
 
     .category button {
       border: none;
-      background-color: transparent;
-      color: white;
-      padding: 5px;
+      background-color: gray;
+      color: #ffffff;
+      padding: 10px;
       text-align: center;
       text-decoration: none;
       display: inline-block;
-      font-size: 14px;
+      font-size: 16px;
       cursor: pointer;
       width: 100%;
+      margin-bottom: 10px;
       transition: background-color 0.3s;
+      border-radius: 5px;
     }
 
     .category button:hover {
-      background-color: #f4f4f4;
+      background-color: #999;
+      transform:Scale(1.02);
     }
 
     .purple {
-      background-color: purple !important;
+      background-color: #800080 !important;
     }
+    .bapev4 .input-fields {
+      margin:0 auto;
+      width: 100%;
+      outline: none;
+      border: 2px solid #333;
+      border-radius: 4px;
+      padding: 10px;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+      background-color: gray;
+      color: white;
+      font-weight:700;
+    }
+    .bapev4 .input-fields::placeholder {
+    color:white;
+    }
+.bapev4 .input-field:hover {
+  border-color: #666;
+}
+.bapev4 .input-field:focus {
+  outline: none;
+  border-color: #4caf50; 
+}
+
+    #extra input[type="number"] {
+      margin:0 auto;
+      width: 100%;
+      outline: none;
+      border: 2px solid #333;
+      border-radius: 4px;
+      padding: 10px;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+      background-color: gray;
+      color: white;
+      font-weight:700;
+    }
+    .bapev4 label {
+    text-align:center
+    margin-bottom:3px;
+font-weight: bold;
+  }
   </style>
 `;
 
 window.toggleButton = function(button) {
   button.classList.toggle('purple');
 }
-        document.addEventListener('DOMContentLoaded', function () {
-window.showCategory = function(category) {
+document.addEventListener('DOMContentLoaded', function () {
+ window.showCategory = function(category) {
   const categories = document.querySelectorAll('.category');
   categories.forEach(cat => {
     cat.style.display = 'none';
   });
   document.getElementById(category).style.display = 'block';
-}});
+  }
+});
