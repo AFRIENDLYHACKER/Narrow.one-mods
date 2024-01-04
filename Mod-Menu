@@ -21,7 +21,7 @@ const clientHTML = `
 
   <div class="category" id="combat">
     <h2>Combat</h2>
-    <button type="button" id="bapev4-autoclick" onclick="toggleButton(this)">Autoclick</button>
+    <button type="button" id="bapev4-autoclick" onclick="toggleButton(this)">Spam Fire</button>
     <button type="button" id="bapev4-highjump" onclick="toggleButton(this)">High Jump</button>
     <button type="button" id="bapev4-speed" onclick="toggleButton(this)">Speed</button>
   </div>
