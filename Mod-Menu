@@ -53,7 +53,7 @@ const clientCSS = `
       user-select:none;
       padding: 10px;
       box-sizing: border-box;
-      max-width: 350px;
+      max-width: 362px;
       position: absolute;
       top: 0;
       left: 0;
